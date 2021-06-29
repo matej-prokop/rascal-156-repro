@@ -4,10 +4,10 @@ Code to reproduce https://github.com/guidesmiths/rascal/issues/156
 
 Steps:
 
-1. update `adhoc/rmq-publisher.js` to provide password for Amazon MQ`
+1. update `adhoc/rmq-publisher.js` to provide password of RMQ user
 1. run `npm install`
 1. run `DEBUG=rascal:* node adhoc/rmq-publisher.js`
-1. restart AMQ cluster (via AWS console)
+1. restart AMQ cluster (see howto section below)
 1. wait for the cluster to get restarted indicated by
 
 ```
@@ -16,3 +16,14 @@ RabbitBroker (rascal) - error Error: Connection closed: 320 (CONNECTION-FORCED) 
 ```
 
 (tested with Node.js v14.16.0)
+
+### HOWTO restart Amazon MQ cluster
+
+1. configure new AWS profile by executing `aws configure --profile rascal-test`
+1. enter `AKIARBZZQR2HDJWZZZIB` as access key
+1. enter access secret (for AWS CLI)
+1. enter `us-west-2` as region
+1. leave `Default output format` empty
+
+1. use new AWS profile to restart AMQ cluster: `aws --profile rascal-test mq reboot-broker --broker-id b-f6fe758b-07f7-4afa-b0ae-302212d604c3`
+1. it takes a few minutes (~5mins) for cluster to fully restart
