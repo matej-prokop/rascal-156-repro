@@ -19,6 +19,8 @@ RabbitBroker (rascal) - error Error: Connection closed: 320 (CONNECTION-FORCED) 
 
 ### HOWTO restart Amazon MQ cluster
 
+You need to have AWS CLI v2: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+
 1. configure new AWS profile by executing `aws configure --profile rascal-test`
 1. enter `AKIARBZZQR2HDJWZZZIB` as access key
 1. enter access secret (for AWS CLI)
