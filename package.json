@@ -1,0 +1,14 @@
+{
+  "name": "rascal156repro",
+  "version": "6.0.0",
+  "description": "Code to reproduce an issue with rascal lib",
+  "main": "./lib/index.js",
+  "scripts": {},
+  "author": "Matej Prokop <matej.prokop@onelogin.com>",
+  "devDependencies": {},
+  "dependencies": {
+    "amqplib": "0.7.1",
+    "ramda": "0.27.1",
+    "rascal": "13.0.2"
+  }
+}
